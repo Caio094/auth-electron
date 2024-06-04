@@ -1,21 +1,28 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Header from './components/Header';
+import AuthenticatedPage from './pages/AuthenticatedPage'; // Componente para a rota autenticada
+import ProtectedRoute from './components/ProtectedRoute';
 
-export default function App() {
+function App() {
+
+
   return (
     <BrowserRouter>
-    <Header/>
-    <div>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-      <Routes>
-          <Route  path="/" element={<Home />}></Route>
-          <Route  path="/login" element={<Login />}></Route>
-          <Route  path="/register" element={<Register />}></Route>
-      </Routes>
-    </div>
+            <Route path="/authenticated" element={
+            <ProtectedRoute>  
+                 <AuthenticatedPage />
+            </ProtectedRoute>} />
+         
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
+
+export default App;

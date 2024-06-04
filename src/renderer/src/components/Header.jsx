@@ -1,11 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-function Header() {
-    return <>
-        <Link to="/">Home</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
-    </>;
+function Header({ isLoggedIn }) {
+  if(!isLoggedIn){
+
+    return (
+      <div>
+        <Link to="/register">Registrar</Link>
+        <Link to="/">Login</Link>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <Link to="/authenticated">Página Autenticada</Link>
+    </div>
+  );
 }
 
 export default Header;

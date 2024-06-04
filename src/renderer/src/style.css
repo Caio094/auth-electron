@@ -1,7 +1,44 @@
-*{
-    padding:  0;
-    margin: 0;
-    font-size: 38px;
-    font-family: sans-serif;
+/* Reset de estilos para todos os elementos */
+* {
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box; /* Garante que o padding e a borda não alterem a largura e altura dos elementos */
 }
 
+/* Estilo para o body, definindo uma fonte padrão e cor de fundo */
+body {
+    font-family: sans-serif;
+    background-color: #d5d0f0; /* Cor de fundo */
+}
+
+/* Estilo para todos os elementos de texto */
+body, input, button {
+    font-size: 16px;
+}
+
+/* Estilo específico para o cabeçalho (header) */
+header {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+    padding: 10px 20px; /* Espaçamento interno */
+    display: flex; /* Exibir os itens em linha */
+    justify-content: space-between; /* Alinhar os itens para ocupar todo o espaço disponível */
+    align-items: center; /* Centralizar os itens verticalmente */
+}
+
+/* Estilo para os links no cabeçalho */
+header a {
+    color: #4061f0; /* Cor do texto */
+    text-decoration: none; /* Remover sublinhado */
+    margin-right: 10px; /* Espaçamento à direita entre os links */
+}
+
+/* Estilo para os links no cabeçalho quando hover */
+header a:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse */
+}
+
+/* Estilo para o conteúdo principal */
+.main-content {
+    padding: 20px; /* Espaçamento interno */
+}
